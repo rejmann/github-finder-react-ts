@@ -1,14 +1,20 @@
 export type UserType = {
+    id: number;
     login: string;
     avatar_url: string;
-    url: string;
-    name: string;
-    company: string;
-    blog: string;
-    location: string;
-    email: string;
-    bio: string;
-    public_repos: number;
-    followers: number;
-    following: number;
+    html_url: string;
+    name: string|null;
+    company: string|null;
+    blog: string|null;
+    location: string|null;
+    email: string|null;
+    bio: string|null;
+    
+    public_repos: number|null;
+    followers: number|null;
+    following: number|null;
+
+    created_at: string;
+
+    repos_url: string|null;
 }

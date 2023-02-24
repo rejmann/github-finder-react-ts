@@ -16,22 +16,22 @@ export function Perfil(
 
     if (user) {
         perfil = (
-            <div className="mt-5 mx-4 p-6 w-[25vw] rounded-xl text-gray-500 text-center flex flex-col items-center border border-[#B3BAC2]">
+            <div className="w-[25vw] mx-4 mt-5 p-6 rounded-xl flex flex-col items-center border border-[#B3BAC2] ">
                 <img 
                     src={user.avatar_url} 
-                    alt={user.name} 
+                    alt={`Foto de perfil de ${user.name ? user.name : user.login}`}
                     className="rounded-full w-56 mb-3" 
                 />
 
                 <div className="w-full text-start">
                     {user.name && <h1 className="font-bold text-2xl text-[#B3BAC2]">{user.name}</h1>}
-                    {user.login && <p className="text-2xl">{user.login}</p>}
+                    {user.login && <p className="text-gray-500 text-2xl">{user.login}</p>}
                 </div>
 
                 <div className="w-full my-4">{user.bio && <p className="text-[#B3BAC2] text-left text-base">{user.bio}</p> }</div>
                 
                 
-                <div className="w-full text-start"> 
+                <div className="w-full text-start text-gray-500"> 
                     {user.location && <p className="text-sm">
                         <IoLocationSharp className="inline-block mr-1" />
                         {user.location}

@@ -2,9 +2,8 @@ import { useState } from 'react'
 import { UserType } from './types/UserType'
 import { Buscador } from "./components/Buscador"
 import { Perfil } from "./components/Perfil"
-
-import api from './services/api'
-
+import { Detalhes } from "./components/Detalhes"
+import apiGithub from './services/apiGithub'
 
 export default function App() {
   
@@ -18,12 +17,11 @@ export default function App() {
       return
     }
 
-    api
+    apiGithub
       .get(`/users/${search}`)
       .then((resp) => {
-          const data: UserType = resp.data
-          setUser(data)
-
+        const data: UserType = resp.data
+        setUser(data)
       })
       .catch((err) => {
         setError(`Ops! ocorreu um erro: ${err.message}`)
@@ -51,6 +49,7 @@ export default function App() {
           <div className='flex flex-col'>
             <Buscador handleUser={handleUser} />
 
+            {user && <Detalhes user={user} />}
           </div>
         </div>
       </div>
