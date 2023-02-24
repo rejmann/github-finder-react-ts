@@ -1,6 +1,7 @@
 import Botao from './Botao'
 import { UserType } from '../types/UserType'
 import { BsFillArrowRightSquareFill } from 'react-icons/bs'
+import { Link } from 'react-router-dom'
 
 export function Detalhes(
     { user }:
@@ -11,8 +12,8 @@ export function Detalhes(
 
     return (
         <>
-            <div className=" w-full p-6 rounded-xl border border-[#B3BAC2]">
-                <h1 className="subtitulo text-center">Detalhes</h1>
+            <div className="w-full p-6 rounded-xl border border-[#B3BAC2]">
+                <h1 className="font-bold text-2xl text-[#B3BAC2] mb-6 text-center text-center">Detalhes</h1>
 
                 <p className="text-gray-500 text-sm">Membro desde</p>
                 <p className="text-[#B3BAC2] text-xl font-bold">{date}</p>
@@ -36,17 +37,19 @@ export function Detalhes(
 
                 <div className='border border-[#B3BAC2] my-3'></div>
 
-                <Botao> 
-                    <div className='w-full flex justify-center items-center'>
-                        <span className="text-xl">
-                            Repositórios
-                        </span>
-                        <BsFillArrowRightSquareFill 
-                            size={25} 
-                            className="inline-block ml-16"
-                        />
-                    </div>
-                </Botao>
+                <Link to={`/${user.login}/repos`}>
+                    <Botao> 
+                        <div className='w-full flex justify-center items-center'>
+                            <span className="text-xl">
+                                Repositórios
+                            </span>
+                            <BsFillArrowRightSquareFill 
+                                size={25} 
+                                className="inline-block ml-16"
+                            />
+                        </div>
+                    </Botao>
+                </Link>
             </div>
         </>
     )

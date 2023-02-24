@@ -10,7 +10,3 @@
 body{
   @apply bg-[#0D1117];
 }
-
-.subtitulo{
-  @apply font-bold text-2xl text-[#B3BAC2] mb-5;
-}
