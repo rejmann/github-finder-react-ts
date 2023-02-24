@@ -1,0 +1,5 @@
+#! /bin/bash
+
+./cli/node npm install
+
+docker compose up --build

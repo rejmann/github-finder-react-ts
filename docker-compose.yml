@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  frontend:
+    container_name: docker-react-ts
+    build: 
+      context: .
+      dockerfile: ./docker/Dockerfile
+    ports:
+      - 3000:3000
+    volumes:
+      - ./:/app
